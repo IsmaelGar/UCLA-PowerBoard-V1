@@ -17,12 +17,7 @@ Channel 7:
 Write to I2C Expander then follow with the following functions
 
 **/
-
-struct MAX5825_DAC{
-	uint16_t address;
-	uint16_t channel;
-	uint16_t voltage;
-};
+ 
  
 /**
 Configuration Registers
@@ -48,9 +43,7 @@ void DAC_pwr(uint16_t address, uint16_t channel,int mode){
  
 
 }
-
-
-
+ 
 /**
 Dac_config(uint16_t,uint16_t,int,int,int,int);
 	uint16_t address    	 : DAC i2c address

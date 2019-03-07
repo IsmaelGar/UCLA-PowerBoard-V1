@@ -56,25 +56,18 @@ int main(){
 
   **/
   
+ 
+  
+
+while(1){
   wiringPiI2CWrite(fd[0],0x02); 
   code_load(fd[5],0x01,0xff);
   load(fd[5],0x01);
   
+  usleep(250000);
 
-while(1){
-wiringPiI2CWrite(fd[0],0x02); 
-     data = wiringPiI2CWriteReg16(fd[5],0xB0,0xFF10);
 }
  
-while(1){
-      
- 
- 
-
- 
-
-usleep(250000);
-}
 }
 
 void test_DeviceID(){

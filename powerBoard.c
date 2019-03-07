@@ -19,12 +19,14 @@ void test_DeviceID();
 //Variables
 int i = 0;
 int address = 0x00;
-int main(){
-int fd[18] = {};
 uint16_t temp_resolution = 1;
 int upperByte  = 0;
 int lowerByte  = 0;
 int data = 0;
+
+int main(){
+int fd[18] = {};
+ 
 
 	wiringPiSetup();
 	fd[0]  = wiringPiI2CSetup(0x71);//i2c multiplexer

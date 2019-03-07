@@ -78,7 +78,7 @@ DAC Registers
 
 //Function updates contents of CODE register
 uint16_t code(uint16_t address, uint16_t channel,uint16_t voltage){
-	wiringPiI2CReadReg16(address,0x80|channel,voltage << 4);
+	wiringPiI2CReadReg16(address,(0x80|channel)|(voltage << 4));
 }
 
 //Function loads contents of CODE register to DAC register

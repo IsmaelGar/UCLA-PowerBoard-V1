@@ -57,7 +57,9 @@ int main(){
   **/
   
  
-  
+  while(1){  wiringPiI2CWrite(fd[0],0xFF);
+  }  
+
 
 while(1){
   wiringPiI2CWrite(fd[0],0x02); 

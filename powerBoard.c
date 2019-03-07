@@ -23,10 +23,10 @@ uint16_t temp_resolution = 1;
 int upperByte  = 0;
 int lowerByte  = 0;
 int data = 0;
+int fd[18] = {};
 
 int main(){
-int fd[18] = {};
- 
+  
 
 	wiringPiSetup();
 	fd[0]  = wiringPiI2CSetup(0x71);//i2c multiplexer

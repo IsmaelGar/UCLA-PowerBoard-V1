@@ -63,7 +63,11 @@ while(1){
   wiringPiI2CWrite(fd[0],0x02); 
   code_load(fd[5],0x01,0xFFFF);
   load(fd[5],0x01);
+   
   
+  
+  wiringPiI2CWrite(fd[0],0x00); 
+
   usleep(250000);
 
 }

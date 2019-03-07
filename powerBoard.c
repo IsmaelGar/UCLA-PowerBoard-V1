@@ -68,6 +68,7 @@ while(1){
 
 usleep(250000);
 }
+}
 
 void test_DeviceID(){
 	

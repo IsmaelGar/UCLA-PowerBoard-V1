@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdint.h>
-#include "MAX5825BAUP.h"
+#include "MAX5825BAUP+.h"
 
 //I2C Addresses
 char DAC               = 0x1F;
@@ -25,9 +25,8 @@ uint16_t temp_resolution = 1;
 int upperByte  = 0;
 int lowerByte  = 0;
 int data = 0;
-	wiringPiSetup();
 
- 
+	wiringPiSetup();
 	fd[0]  = wiringPiI2CSetup(0x71);//i2c multiplexer
 	fd[1]  = wiringPiI2CSetup(currentSensors[0]);//INA226 #1
 	fd[2]  = wiringPiI2CSetup(currentSensors[1]);//INA226 #2

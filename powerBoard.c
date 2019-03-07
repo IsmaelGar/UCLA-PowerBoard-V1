@@ -55,6 +55,11 @@ int main(){
 	
 
   **/
+  
+  wiringPiI2CWrite(fd[0],0x02); 
+  code_load(fd[5],0x01,0xff);
+  load(fd[5],0x01);
+  
 
 while(1){
 wiringPiI2CWrite(fd[0],0x02); 

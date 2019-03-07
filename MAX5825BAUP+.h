@@ -97,13 +97,13 @@ DAC Registers
 **/
 
 //Function updates contents of CODE register
-uint16_t code(uint16_t address, uint16_tnt16_t channel,uint16_t voltage);
+uint16_t code(uint16_t address, uint16_t channel,uint16_t voltage);
 
 //Function loads contents of CODE register to DAC register
-uint16_t load(uint16_t address, uint16_tnt16_t channel);
+uint16_t load(uint16_t address, uint16_t channel);
 
 //Function updates CODE register and loads to DAC register
-uint16_t code_load(uint16_t address, uint16_tnt16_t channel,uint16_t voltage);
+uint16_t code_load(uint16_t address, uint16_t channel,uint16_t voltage);
 
 //Function updates CODE register and loads to DAC register
 uint16_t codeAll_loadAll(uint16_t address,uint16_t voltage);

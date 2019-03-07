@@ -3,13 +3,20 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdint.h>
+#include "MAX5825BAUP.h"
 
+//I2C Addresses
 char DAC               = 0x1F;
 char ADC               = 0x33; 
 char currentSensors[4] = {0x4C,0x4D,0x4E,0x4F};
 char temperature[11]   = {0x40,0x41,0x42,0x44,0x45,0x46,0x47,0x48,0x49,0x4A,0x4B};
 
 
+//Prototypes
+void test_DeviceID();
+
+
+//Variables
 int i = 0;
 int address = 0x00;
 int main(){
@@ -54,7 +61,18 @@ wiringPiI2CWrite(fd[0],0x02);
 }
  
 while(1){
-     printf("\n\r");
+      
+ 
+ 
+
+ 
+
+usleep(250000);
+}
+
+void test_DeviceID(){
+	
+	printf("\n\r");
      //INA226 TEST
      wiringPiI2CWrite(fd[0],0x08); 
      data = wiringPiI2CReadReg16(fd[1],0xFF);
@@ -104,11 +122,8 @@ wiringPiI2CWrite(fd[0],0x00);
 	lowerByte = (data & 0x00FF) << 8;
 	printf("TMP1075(0x%x) Device ID: 0x%x\n\r",temperature[i],(upperByte + lowerByte) );
       }
- 
- 
-
- 
-
-usleep(250000);
-}
+	
+	
+	
+	
 }

@@ -4,6 +4,29 @@
 
 /**
 UCLA GAPS:
+
+Note:
+
+For this version of the Power Board, this chip is interfacing with an I2C multiplexer PCA9548 on channel 1.
+Write to PCA9548 with address 0x71, then write for one byte with value 0x02 for channel 2 I2C transaction.
+**********************************************************************************************************
+Ex.
+   fd[0]  = wiringPiI2CSetup(0x71);//i2c multiplexer
+   fd[5]  = wiringPiI2CSetup(0x1F);//MAX5825BAUP  DAC
+   
+   wiringPiI2CWrite(fd[0],0x02); 
+   DAC_pwr(fd[5], 0xFF,0x00); All DAC Channels are 
+   
+   ......
+   
+  
+   wiringPiI2CWrite(fd[0],0x00); //Disables all PCA9548 channels 
+**********************************************************************************************************
+	
+
+Datasheet: http://www.ti.com/lit/ds/symlink/pca9548a.pdf
+
+
 C Library for MAX5825BAUP+ DAC used for HV
 Channel 0: 
 Channel 1: 
